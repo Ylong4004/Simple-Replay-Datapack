@@ -1,0 +1,10 @@
+{
+	"criteria": {
+		"place_block": {
+			"trigger": "minecraft:placed_block"
+		}
+	},
+	"rewards": {
+		"function": "replay:event/swing_main"
+	}
+}

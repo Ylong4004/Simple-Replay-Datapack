@@ -9,6 +9,8 @@ scoreboard players set #20 replay.sec 20
 scoreboard players set #playing replay.state 0
 scoreboard players set #recording replay.state 0
 scoreboard players set #actor_existing replay.state 0
+scoreboard players set #multi_next replay.state 0
+scoreboard players set #multi_has_frames replay.state 0
 execute unless data storage replay:record frames run data modify storage replay:record frames set value []
 execute unless data storage replay:play frames run data modify storage replay:play frames set value []
 execute unless data storage replay:library recordings run data modify storage replay:library recordings set value []

@@ -5,6 +5,6 @@
 		}
 	},
 	"rewards": {
-		"function": "replay:event/swing_main"
+		"function": "replay:event/block_use_swing"
 	}
 }

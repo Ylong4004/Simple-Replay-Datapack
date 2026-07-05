@@ -10,6 +10,14 @@ data modify storage replay:edit dialog.entity_type_initial set value "minecraft:
 execute if data storage replay:edit selected.meta.default_entity.id run data modify storage replay:edit dialog.entity_type_initial set from storage replay:edit selected.meta.default_entity.id
 data modify storage replay:edit dialog.profile_initial set value ""
 execute if data storage replay:edit selected.meta.default_entity.profile.name run data modify storage replay:edit dialog.profile_initial set from storage replay:edit selected.meta.default_entity.profile.name
+data modify storage replay:edit dialog.texture_initial set value ""
+execute if data storage replay:edit selected.meta.default_entity.profile.texture run data modify storage replay:edit dialog.texture_initial set from storage replay:edit selected.meta.default_entity.profile.texture
+data modify storage replay:edit dialog.model_initial set value ""
+execute if data storage replay:edit selected.meta.default_entity.profile.model run data modify storage replay:edit dialog.model_initial set from storage replay:edit selected.meta.default_entity.profile.model
+data modify storage replay:edit dialog.elytra_initial set value ""
+execute if data storage replay:edit selected.meta.default_entity.profile.elytra run data modify storage replay:edit dialog.elytra_initial set from storage replay:edit selected.meta.default_entity.profile.elytra
+data modify storage replay:edit dialog.cape_initial set value ""
+execute if data storage replay:edit selected.meta.default_entity.profile.cape run data modify storage replay:edit dialog.cape_initial set from storage replay:edit selected.meta.default_entity.profile.cape
 data modify storage replay:edit dialog.custom_name_initial set value ""
 execute if data storage replay:edit selected.meta.default_entity.CustomName.text run data modify storage replay:edit dialog.custom_name_initial set from storage replay:edit selected.meta.default_entity.CustomName.text
 data modify storage replay:edit dialog.description_initial set value ""
@@ -31,6 +39,10 @@ data modify storage replay:edit dialog.record_name set value "$(record_name)"
 data modify storage replay:edit dialog.recorder set value "$(recorder)"
 data modify storage replay:edit dialog.entity_type set value "$(entity_type)"
 data modify storage replay:edit dialog.profile_name set value "$(profile_name)"
+data modify storage replay:edit dialog.texture set value "$(texture)"
+data modify storage replay:edit dialog.model set value "$(model)"
+data modify storage replay:edit dialog.elytra set value "$(elytra)"
+data modify storage replay:edit dialog.cape set value "$(cape)"
 data modify storage replay:edit dialog.custom_name set value "$(custom_name)"
 data modify storage replay:edit dialog.custom_name_visible set value "$(custom_name_visible)"
 data modify storage replay:edit dialog.hide_description set value "$(hide_description)"

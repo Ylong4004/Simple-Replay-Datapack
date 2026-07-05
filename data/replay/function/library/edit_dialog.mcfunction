@@ -43,6 +43,38 @@ $dialog show @s {\
         },\
         {\
             "type": "minecraft:text",\
+            "key": "texture",\
+            "label": {"text": "profile.texture"},\
+            "initial": "$(texture_initial)",\
+            "max_length": 128,\
+            "width": 300\
+        },\
+        {\
+            "type": "minecraft:text",\
+            "key": "model",\
+            "label": {"text": "profile.model"},\
+            "initial": "$(model_initial)",\
+            "max_length": 128,\
+            "width": 300\
+        },\
+        {\
+            "type": "minecraft:text",\
+            "key": "elytra",\
+            "label": {"text": "profile.elytra"},\
+            "initial": "$(elytra_initial)",\
+            "max_length": 128,\
+            "width": 300\
+        },\
+        {\
+            "type": "minecraft:text",\
+            "key": "cape",\
+            "label": {"text": "profile.cape"},\
+            "initial": "$(cape_initial)",\
+            "max_length": 128,\
+            "width": 300\
+        },\
+        {\
+            "type": "minecraft:text",\
             "key": "custom_name",\
             "label": {"text": "CustomName"},\
             "initial": "$(custom_name_initial)",\
@@ -95,7 +127,7 @@ $dialog show @s {\
         "label": {"text": "保存"},\
         "action": {\
             "type": "minecraft:dynamic/run_command",\
-            "template": "function replay:library/save_info {old_name:\"$(old_name_initial)\",name:\"$(record_name)\",recorder:\"$(recorder)\",entity_type:\"$(entity_type)\",profile:\"$(profile_name)\",custom_name:\"$(custom_name)\",custom_name_visible:$(custom_name_visible),hide_description:$(hide_description),loop_playback:$(loop_playback),on_finish_function:\"$(on_finish_function)\",description:\"$(description)\"}"\
+            "template": "function replay:library/save_info {old_name:\"$(old_name_initial)\",name:\"$(record_name)\",recorder:\"$(recorder)\",entity_type:\"$(entity_type)\",profile:\"$(profile_name)\",texture:\"$(texture)\",model:\"$(model)\",elytra:\"$(elytra)\",cape:\"$(cape)\",custom_name:\"$(custom_name)\",custom_name_visible:$(custom_name_visible),hide_description:$(hide_description),loop_playback:$(loop_playback),on_finish_function:\"$(on_finish_function)\",description:\"$(description)\"}"\
         }\
     },\
     "no": {\

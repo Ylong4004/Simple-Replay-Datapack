@@ -26,7 +26,7 @@
 /function replay:library/list
 /function replay:library/delete {name:"Replay"}
 /function replay:play/start {name:"Replay"}
-/function replay:play/start_profile {name:"Replay",loop_playback:0b,on_finish_function:"",entity:{entity_type:"minecraft:mannequin",profile_name:"PlayerName",custom_name:"Replay",custom_name_visible:1b,hide_description:1b}}
+/function replay:play/start_profile {name:"Replay",loop_playback:0b,on_finish_function:"",entity:{entity_type:"minecraft:mannequin",profile_name:"PlayerName",texture:"rpg:masha",custom_name:"Replay",custom_name_visible:1b,hide_description:1b}}
 /function replay:play/start_profile {name:"Replay",loop_playback:0b,on_finish_function:"replay:event/my_finish",entity:{entity_type:"minecraft:zombie",custom_name:"Replay",NoAI:1b}}
 /function replay:play/stop_nearest
 /function replay:play/stop_named {name:"Replay"}
@@ -144,6 +144,10 @@ storage replay:library recordings[].name
 | `recorder`            | 录制者，列表中会显示                        |
 | `entity_type`         | 演员实体类型，默认`minecraft:mannequin`   |
 | `profile_name`        | 玩家模型的`profile.name`                  |
+| `texture`             | 玩家模型的`profile.texture`               |
+| `model`               | 玩家模型的`profile.model`                 |
+| `elytra`              | 玩家模型的`profile.elytra`                |
+| `cape`                | 玩家模型的`profile.cape`                  |
 | `custom_name`         | 玩家模型的`CustomName.text`               |
 | `custom_name_visible` | 玩家模型的`CustomNameVisible`             |
 | `hide_description`    | 玩家模型的`hide_description`              |
@@ -166,7 +170,7 @@ storage replay:library recordings[].name
 播放时覆盖演员实体数据：
 
 ```mcfunction
-/function replay:play/start_profile {name:"Replay",loop_playback:0b,on_finish_function:"",entity:{entity_type:"minecraft:mannequin",profile_name:"PlayerName",custom_name:"Replay",custom_name_visible:1b,hide_description:1b}}
+/function replay:play/start_profile {name:"Replay",loop_playback:0b,on_finish_function:"",entity:{entity_type:"minecraft:mannequin",profile_name:"PlayerName",texture:"rpg:masha",custom_name:"Replay",custom_name_visible:1b,hide_description:1b}}
 ```
 
 换成其他生物：

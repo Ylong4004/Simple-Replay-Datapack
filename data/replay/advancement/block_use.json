@@ -1,0 +1,10 @@
+{
+	"criteria": {
+		"use_block": {
+			"trigger": "minecraft:default_block_use"
+		}
+	},
+	"rewards": {
+		"function": "replay:event/swing_main"
+	}
+}

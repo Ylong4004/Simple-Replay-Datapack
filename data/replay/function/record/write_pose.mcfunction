@@ -1,0 +1,8 @@
+data modify storage replay:runtime frame.pose set value "standing"
+execute if predicate replay:is_sneaking run data modify storage replay:runtime frame.pose set value "crouching"
+execute if predicate replay:is_swimming run data modify storage replay:runtime frame.pose set value "swimming"
+execute if predicate replay:is_fall_flying run data modify storage replay:runtime frame.pose set value "fall_flying"
+execute if entity @s[nbt={Pose:"SLEEPING"}] run data modify storage replay:runtime frame.pose set value "sleeping"
+execute if entity @s[nbt={Pose:"sleeping"}] run data modify storage replay:runtime frame.pose set value "sleeping"
+execute if entity @s[nbt={MainArm:"left"}] run data modify storage replay:runtime frame.main_hand set value "left"
+execute if entity @s[nbt={MainArm:"LEFT"}] run data modify storage replay:runtime frame.main_hand set value "left"

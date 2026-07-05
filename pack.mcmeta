@@ -1,0 +1,9 @@
+{
+    "pack": {
+        "description": "Simple Replay --By 歪浪Ylong",
+		"pack_format": 101,
+        "supported_formats": [101, 101],
+		"min_format": 101,
+        "max_format": [101, 101]
+    }
+}

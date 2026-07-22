@@ -9,7 +9,7 @@ execute if data storage replay:list entry.meta.default_entity.id run data modify
 execute if data storage replay:list entry.meta.dimension run data modify storage replay:list row.dimension set from storage replay:list entry.meta.dimension
 execute if data storage replay:list entry.meta{loop_playback:1} run data modify storage replay:list row.loop set value "开"
 execute if data storage replay:list entry.meta{loop_playback:1b} run data modify storage replay:list row.loop set value "开"
-execute if data storage replay:list entry.meta{kind:"multi_player_mannequin_replay"} run data modify storage replay:list row.kind set value "多人"
+execute if data storage replay:list entry.meta{kind:"multi_player_replay"} run data modify storage replay:list row.kind set value "多人"
 execute if data storage replay:list entry.meta.actor_count run data modify storage replay:list row.actor_count set from storage replay:list entry.meta.actor_count
 function replay:library/list_row with storage replay:list row
 data remove storage replay:list entries[0]

@@ -4,7 +4,7 @@ $dialog show @s {\
     "body": [\
         {\
             "type": "minecraft:plain_message",\
-            "contents": {"text": "这里只修改录像名称、默认演员实体数据、循环和结束回调，不会改动已录制帧。"},\
+            "contents": {"text": "这里只修改录像名称、默认演员实体数据、循环和结束回调，不会改动已录制帧。多人录像只有勾选统一应用时才会覆盖全部成员；单个成员请使用成员编辑。"},\
             "width": 360\
         }\
     ],\
@@ -106,6 +106,14 @@ $dialog show @s {\
             "on_false": "0b"\
         },\
         {\
+            "type": "minecraft:boolean",\
+            "key": "apply_entity_to_all",\
+            "label": {"text": "多人录像：统一应用演员数据到全部成员"},\
+            "initial": $(apply_entity_to_all_initial),\
+            "on_true": "1b",\
+            "on_false": "0b"\
+        },\
+        {\
             "type": "minecraft:text",\
             "key": "on_finish_function",\
             "label": {"text": "结束回调函数命名空间id"},\
@@ -127,7 +135,7 @@ $dialog show @s {\
         "label": {"text": "保存"},\
         "action": {\
             "type": "minecraft:dynamic/run_command",\
-            "template": "function replay:library/save_info {old_name:\"$(old_name_initial)\",name:\"$(record_name)\",recorder:\"$(recorder)\",entity_type:\"$(entity_type)\",profile:\"$(profile_name)\",texture:\"$(texture)\",model:\"$(model)\",elytra:\"$(elytra)\",cape:\"$(cape)\",custom_name:\"$(custom_name)\",custom_name_visible:$(custom_name_visible),hide_description:$(hide_description),loop_playback:$(loop_playback),on_finish_function:\"$(on_finish_function)\",description:\"$(description)\"}"\
+            "template": "function replay:library/save_info {old_name:\"$(old_name_initial)\",name:\"$(record_name)\",recorder:\"$(recorder)\",entity_type:\"$(entity_type)\",profile:\"$(profile_name)\",texture:\"$(texture)\",model:\"$(model)\",elytra:\"$(elytra)\",cape:\"$(cape)\",custom_name:\"$(custom_name)\",custom_name_visible:$(custom_name_visible),hide_description:$(hide_description),loop_playback:$(loop_playback),apply_entity_to_all:$(apply_entity_to_all),on_finish_function:\"$(on_finish_function)\",description:\"$(description)\"}"\
         }\
     },\
     "no": {\

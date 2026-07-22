@@ -1,3 +1,5 @@
+data remove storage replay:edit selected
+data remove storage replay:edit dialog
 $execute unless data storage replay:library recordings[{name:"$(name)"}] run tellraw @s {text:"没有找到这个回放。",color:"red"}
 $execute unless data storage replay:library recordings[{name:"$(name)"}] run return 0
 $data modify storage replay:edit selected set from storage replay:library recordings[{name:"$(name)"}]
@@ -34,6 +36,7 @@ execute if data storage replay:edit selected.meta.default_entity{hide_descriptio
 data modify storage replay:edit dialog.loop_playback_initial set value "false"
 execute if data storage replay:edit selected.meta{loop_playback:1} run data modify storage replay:edit dialog.loop_playback_initial set value "true"
 execute if data storage replay:edit selected.meta{loop_playback:1b} run data modify storage replay:edit dialog.loop_playback_initial set value "true"
+data modify storage replay:edit dialog.apply_entity_to_all_initial set value "false"
 
 data modify storage replay:edit dialog.record_name set value "$(record_name)"
 data modify storage replay:edit dialog.recorder set value "$(recorder)"
@@ -47,6 +50,9 @@ data modify storage replay:edit dialog.custom_name set value "$(custom_name)"
 data modify storage replay:edit dialog.custom_name_visible set value "$(custom_name_visible)"
 data modify storage replay:edit dialog.hide_description set value "$(hide_description)"
 data modify storage replay:edit dialog.loop_playback set value "$(loop_playback)"
+data modify storage replay:edit dialog.apply_entity_to_all set value "$(apply_entity_to_all)"
 data modify storage replay:edit dialog.on_finish_function set value "$(on_finish_function)"
 data modify storage replay:edit dialog.description set value "$(description)"
 function replay:library/edit_dialog with storage replay:edit dialog
+data remove storage replay:edit selected
+data remove storage replay:edit dialog

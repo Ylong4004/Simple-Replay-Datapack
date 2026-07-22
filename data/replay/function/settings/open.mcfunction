@@ -38,3 +38,21 @@ data modify storage replay:settings_dialog playback_speed_initial set from stora
 data modify storage replay:settings_dialog max_record_ticks_initial set from storage replay:settings max_record_ticks
 data modify storage replay:settings_dialog control_ray_radius_initial set from storage replay:settings control_ray_radius
 function replay:settings/open_dialog with storage replay:settings_dialog
+data remove storage replay:settings_dialog cleanup_same_recording
+data remove storage replay:settings_dialog cleanup_all_spawned_before_play
+data remove storage replay:settings_dialog remove_spawned_on_finish
+data remove storage replay:settings_dialog playback_speed
+data remove storage replay:settings_dialog show_playback_actionbar
+data remove storage replay:settings_dialog max_record_ticks
+data remove storage replay:settings_dialog remove_play_controls_on_finish
+data remove storage replay:settings_dialog control_target_glow
+data remove storage replay:settings_dialog control_ray_radius
+data remove storage replay:settings_dialog cleanup_same_recording_initial
+data remove storage replay:settings_dialog cleanup_all_spawned_before_play_initial
+data remove storage replay:settings_dialog remove_spawned_on_finish_initial
+data remove storage replay:settings_dialog playback_speed_initial
+data remove storage replay:settings_dialog show_playback_actionbar_initial
+data remove storage replay:settings_dialog max_record_ticks_initial
+data remove storage replay:settings_dialog remove_play_controls_on_finish_initial
+data remove storage replay:settings_dialog control_target_glow_initial
+data remove storage replay:settings_dialog control_ray_radius_initial

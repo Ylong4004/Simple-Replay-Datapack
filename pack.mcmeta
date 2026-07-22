@@ -1,9 +1,7 @@
 {
-    "pack": {
-        "description": "Simple Replay --By 歪浪Ylong",
-		"pack_format": 101,
-        "supported_formats": [101, 101],
-		"min_format": 101,
-        "max_format": [101, 101]
-    }
+  "pack": {
+    "description": "Simple Replay 26.1.2-26.2 -- By 歪浪Ylong",
+    "min_format": [101, 1],
+    "max_format": 107
+  }
 }

@@ -1,9 +1,9 @@
 data modify storage replay:multi_save entry.actors set value []
-execute as @e[tag=replay.multi.store,tag=replay.multi.slot.0] if data entity @s data.replay.frames[0] run function replay:multi/save/append_actor
-execute as @e[tag=replay.multi.store,tag=replay.multi.slot.1] if data entity @s data.replay.frames[0] run function replay:multi/save/append_actor
-execute as @e[tag=replay.multi.store,tag=replay.multi.slot.2] if data entity @s data.replay.frames[0] run function replay:multi/save/append_actor
-execute as @e[tag=replay.multi.store,tag=replay.multi.slot.3] if data entity @s data.replay.frames[0] run function replay:multi/save/append_actor
-execute as @e[tag=replay.multi.store,tag=replay.multi.slot.4] if data entity @s data.replay.frames[0] run function replay:multi/save/append_actor
-execute as @e[tag=replay.multi.store,tag=replay.multi.slot.5] if data entity @s data.replay.frames[0] run function replay:multi/save/append_actor
-execute as @e[tag=replay.multi.store,tag=replay.multi.slot.6] if data entity @s data.replay.frames[0] run function replay:multi/save/append_actor
-execute as @e[tag=replay.multi.store,tag=replay.multi.slot.7] if data entity @s data.replay.frames[0] run function replay:multi/save/append_actor
+execute if data storage replay:multi slots.s0.frames[0] run function replay:multi/save/append_actor {slot:"s0"}
+execute if data storage replay:multi slots.s1.frames[0] run function replay:multi/save/append_actor {slot:"s1"}
+execute if data storage replay:multi slots.s2.frames[0] run function replay:multi/save/append_actor {slot:"s2"}
+execute if data storage replay:multi slots.s3.frames[0] run function replay:multi/save/append_actor {slot:"s3"}
+execute if data storage replay:multi slots.s4.frames[0] run function replay:multi/save/append_actor {slot:"s4"}
+execute if data storage replay:multi slots.s5.frames[0] run function replay:multi/save/append_actor {slot:"s5"}
+execute if data storage replay:multi slots.s6.frames[0] run function replay:multi/save/append_actor {slot:"s6"}
+execute if data storage replay:multi slots.s7.frames[0] run function replay:multi/save/append_actor {slot:"s7"}

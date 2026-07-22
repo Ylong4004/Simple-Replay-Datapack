@@ -8,4 +8,4 @@ data modify storage replay:multi_play selected set from storage replay:play sele
 data modify storage replay:multi_play actors set from storage replay:play selected.actors
 data modify storage replay:multi_play override_entity set from storage replay:play entity_arg.entity
 function replay:multi/play/start_common
-tellraw @s {text:"连携回放已使用自定义演员数据开始。",color:"green"}
+execute if score #multi_spawned replay.state matches 1.. run tellraw @s {text:"多人同步回放已使用自定义演员数据开始。",color:"green"}

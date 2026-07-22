@@ -13,6 +13,6 @@ tag @a remove replay.multi.slot.4
 tag @a remove replay.multi.slot.5
 tag @a remove replay.multi.slot.6
 tag @a remove replay.multi.slot.7
-kill @e[tag=replay.multi.store]
 data remove storage replay:multi session
+data remove storage replay:multi slots
 scoreboard players set #multi_next replay.state 0

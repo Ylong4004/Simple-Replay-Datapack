@@ -1,10 +1,14 @@
+data remove storage replay:actor_edit target
+data remove storage replay:actor_edit entity
 $data modify storage replay:actor_edit input set value {name:"$(name)",slot:$(slot),entity_type:"$(entity_type)",profile:"$(profile)",texture:"$(texture)",model:"$(model)",elytra:"$(elytra)",cape:"$(cape)",custom_name:"$(custom_name)",custom_name_visible:$(custom_name_visible),hide_description:$(hide_description),description:"$(description)"}
 $execute unless data storage replay:library recordings[{name:"$(name)"}] run tellraw @s {text:"保存成员演员失败：没有找到这个录像。",color:"red"}
 $execute unless data storage replay:library recordings[{name:"$(name)"}] run return 0
 $data modify storage replay:actor_edit target set from storage replay:library recordings[{name:"$(name)"}]
-execute unless data storage replay:actor_edit target.meta{kind:"multi_player_mannequin_replay"} run tellraw @s {text:"保存成员演员失败：这个录像不是多人连携录像。",color:"red"}
-execute unless data storage replay:actor_edit target.meta{kind:"multi_player_mannequin_replay"} run return 0
+execute unless data storage replay:actor_edit target.meta{kind:"multi_player_replay"} run tellraw @s {text:"保存成员演员失败：这个录像不是多人同步录像。",color:"red"}
+execute unless data storage replay:actor_edit target.meta{kind:"multi_player_replay"} run data remove storage replay:actor_edit target
+execute unless data storage replay:actor_edit target.meta{kind:"multi_player_replay"} run return 0
 $execute unless data storage replay:actor_edit target.actors[{slot:$(slot)}] run tellraw @s {text:"保存成员演员失败：没有找到这个 slot 的成员演员。",color:"red"}
+$execute unless data storage replay:actor_edit target.actors[{slot:$(slot)}] run data remove storage replay:actor_edit target
 $execute unless data storage replay:actor_edit target.actors[{slot:$(slot)}] run return 0
 
 data modify storage replay:actor_edit entity set value {}
@@ -35,4 +39,7 @@ $data modify storage replay:actor_edit target.actors[{slot:$(slot)}].default_ent
 $data remove storage replay:library recordings[{name:"$(name)"}]
 data modify storage replay:library recordings append from storage replay:actor_edit target
 tellraw @s {text:"成员演员数据已保存。",color:"green"}
+data remove storage replay:actor_edit target
+data remove storage replay:actor_edit input
+data remove storage replay:actor_edit entity
 $function replay:library/members {name:"$(name)"}

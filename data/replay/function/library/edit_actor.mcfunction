@@ -1,13 +1,20 @@
+data remove storage replay:actor_edit selected
+data remove storage replay:actor_edit actor
+data remove storage replay:actor_edit dialog
 $execute unless data storage replay:library recordings[{name:"$(name)"}] run tellraw @s {text:"没有找到这个录像。",color:"red"}
 $execute unless data storage replay:library recordings[{name:"$(name)"}] run return 0
 $data modify storage replay:actor_edit selected set from storage replay:library recordings[{name:"$(name)"}]
-execute unless data storage replay:actor_edit selected.meta{kind:"multi_player_mannequin_replay"} run tellraw @s {text:"这个录像不是多人连携录像，不能编辑成员演员。",color:"red"}
-execute unless data storage replay:actor_edit selected.meta{kind:"multi_player_mannequin_replay"} run return 0
+execute unless data storage replay:actor_edit selected.meta{kind:"multi_player_replay"} run tellraw @s {text:"这个录像不是多人同步录像，不能编辑成员演员。",color:"red"}
+execute unless data storage replay:actor_edit selected.meta{kind:"multi_player_replay"} run data remove storage replay:actor_edit selected
+execute unless data storage replay:actor_edit selected.meta{kind:"multi_player_replay"} run return 0
 $execute unless data storage replay:actor_edit selected.actors[{slot:$(slot)}] run tellraw @s {text:"没有找到这个 slot 的成员演员。",color:"red"}
+$execute unless data storage replay:actor_edit selected.actors[{slot:$(slot)}] run data remove storage replay:actor_edit selected
 $execute unless data storage replay:actor_edit selected.actors[{slot:$(slot)}] run return 0
 $data modify storage replay:actor_edit actor set from storage replay:actor_edit selected.actors[{slot:$(slot)}]
+data remove storage replay:actor_edit actor.frames
 
 data modify storage replay:actor_edit dialog.record_name_initial set from storage replay:actor_edit selected.name
+data remove storage replay:actor_edit selected
 $data modify storage replay:actor_edit dialog.slot_initial set value $(slot)
 data modify storage replay:actor_edit dialog.entity_type_initial set value "minecraft:mannequin"
 execute if data storage replay:actor_edit actor.default_entity.id run data modify storage replay:actor_edit dialog.entity_type_initial set from storage replay:actor_edit actor.default_entity.id
@@ -43,3 +50,5 @@ data modify storage replay:actor_edit dialog.custom_name_visible set value "$(cu
 data modify storage replay:actor_edit dialog.hide_description set value "$(hide_description)"
 data modify storage replay:actor_edit dialog.description set value "$(description)"
 function replay:library/edit_actor_dialog with storage replay:actor_edit dialog
+data remove storage replay:actor_edit actor
+data remove storage replay:actor_edit dialog

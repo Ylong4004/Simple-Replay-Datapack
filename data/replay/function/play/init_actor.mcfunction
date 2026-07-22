@@ -3,6 +3,7 @@ execute if data storage replay:play entity_merge_arg.entity run function replay:
 tag @s add replay.actor
 data modify entity @s data.replay.frames set from storage replay:play frames
 data modify entity @s data.replay.frame set value {}
+data modify entity @s data.replay.current_frame set value {}
 data modify entity @s data.replay.t set value 0
 data modify entity @s data.replay.loop set value 0b
 scoreboard players set @s replay.t 0

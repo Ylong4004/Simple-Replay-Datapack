@@ -2,6 +2,11 @@ $data modify storage replay:dialog input set value {name:"$(name)",recorder:"$(r
 execute if data storage replay:record defaults.name run data modify storage replay:dialog input.name set from storage replay:record defaults.name
 execute if data storage replay:dialog input{name:""} run tellraw @s {text:"保存回放失败：回放名称不能为空。",color:"red"}
 execute if data storage replay:dialog input{name:""} run return 0
+data remove storage replay:runtime valid_name
+$data modify storage replay:runtime valid_name set value replay_$(name)
+execute unless data storage replay:runtime valid_name run tellraw @s {text:"保存回放失败：名称只能使用英文字母、数字、下划线、连字符、加号和点，不能含空格、引号或斜杠。",color:"red"}
+execute unless data storage replay:runtime valid_name run return 0
+data remove storage replay:runtime valid_name
 execute unless data storage replay:record frames[0] run tellraw @s {text:"保存回放失败：没有录制到任何帧。",color:"red"}
 execute unless data storage replay:record frames[0] run return 0
 
@@ -48,5 +53,9 @@ data modify storage replay:dialog entry.name set from storage replay:dialog inpu
 data modify storage replay:dialog entry.frames set from storage replay:record frames
 data modify storage replay:dialog entry.meta set from storage replay:record meta
 data modify storage replay:library recordings append from storage replay:dialog entry
+data modify storage replay:index source set from storage replay:dialog entry
+function replay:library/index_upsert with storage replay:index source
 data remove storage replay:record defaults
+data remove storage replay:dialog entry
+data remove storage replay:dialog input
 tellraw @s {text:"回放已保存。",color:"green"}

@@ -1,3 +1,4 @@
+tag @s add replay.actor_ticked
 function replay:play/control/glow_tick_actor
 execute if data entity @s data.replay{paused:1b} run return run function replay:play/paused_tick
 execute unless data entity @s data.replay.frames[0] if data entity @s data.replay{loop:1b} run scoreboard players set @s replay.t 0

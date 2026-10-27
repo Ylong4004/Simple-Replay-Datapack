@@ -158,5 +158,5 @@
 若要连录像库一起删除，使用 `/function replay:uninstall_all`，此操作不可撤销。清理只影响在线玩家和已加载区块中的实体；执行后应禁用或移除数据包，避免再次 `/reload` 时重新安装。
 
 - 作者：[歪浪Ylong](https://space.bilibili.com/313686648)
-- 发布介绍与下载：
+- 发布介绍与下载：[https://studiofimel.com/#/works/simple-replay-datapack](https://studiofimel.com/#/works/simple-replay-datapack)
 - 项目源码：[https://github.com/Ylong4004/Simple-Replay-Datapack](https://github.com/Ylong4004/Simple-Replay-Datapack)
